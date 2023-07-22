@@ -12,9 +12,8 @@ import com.leafchild.structures.entity.EntryNode;
  */
 public class HashMap {
 
-    private int size;
-    private EntryNode[] dataItem;
-
+    private final int size;
+    private final EntryNode[] dataItem;
 
     public HashMap(int capacity) {
         this.size = capacity;
@@ -33,15 +32,13 @@ public class HashMap {
 
             while(curr != null){
                 if(curr.getKey().equals(key)) {
+                    node.setNext(curr.getNext());
                     if(prev == null) {
-                        node.setNext(curr.getNext());
                         dataItem[hashVal] = node;
-                        return;
                     } else {
-                        node.setNext(curr.getNext());
                         prev.setNext(node);
-                        return;
                     }
+                    return;
                 }
                 prev = curr;
                 curr = curr.getNext();
@@ -65,7 +62,7 @@ public class HashMap {
     }
 
     public int size() {
-        return size;
+        return dataItem.length;
     }
 
     public boolean containsKey(String key) {
@@ -111,11 +108,10 @@ public class HashMap {
                 if(node.getKey().equals(key)) {
                     if(prev == null) {
                         dataItem[hashVal] = dataItem[hashVal].getNext();
-                        return node;
                     } else {
                         prev.setNext(node.getNext());
-                        return node;
                     }
+                    return node;
                 }
                 prev = node;
                 node = node.getNext();

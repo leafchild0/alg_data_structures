@@ -12,7 +12,8 @@ import com.leafchild.structures.entity.Node;
 public class ArrayList {
 
     private Node[] array;
-    private int listSize, itemsNumber = 0;
+    private final int listSize;
+    private int itemsNumber = 0;
 
     ArrayList(int size) {
         array = new Node[size];
@@ -103,9 +104,6 @@ public class ArrayList {
         System.out.println("Removed item " + list.remove(0));
 
         list.printItems();
-
-
-
     }
 
 }
