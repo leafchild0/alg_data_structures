@@ -4,11 +4,11 @@ package com.leafchild.structures;
  * @author: vmalyshev
  * Created: 8/25/16
  */
-public class Set<K> {
+public class HashSet<K> {
 
     private final java.util.HashMap<K, Object> entries;
 
-    Set(int size) {
+    HashSet(int size) {
         entries = new java.util.HashMap<>(size);
     }
 
@@ -43,7 +43,7 @@ public class Set<K> {
 
     public static void main(String[] args) {
 
-        var set = new Set<String>(5);
+        var set = new HashSet<String>(5);
 
         System.out.println("Is empty: " + set.isEmpty());
 
