@@ -11,7 +11,7 @@ import com.leafchild.algorithms.ArrayUtil;
 public class InsertionSort {
 
     public static void main(String[] args) {
-        int[] array = ArrayUtil.createAndFillArray(10);
+        int[] array = ArrayUtil.createAndFillArray(50);
 
         System.out.println("Unsorted Array:");
         ArrayUtil.printArray(array);
@@ -21,7 +21,7 @@ public class InsertionSort {
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
     }
 
     private static void insertionSort(int[] array) {

@@ -19,20 +19,20 @@ public class ShellSort {
         while (h <= size / 3) {
             h = h * 3 + 1;
         }
-            while(h > 0) {
-                for (outer = h; outer < size; outer++) {
-                    temp = array[outer];
-                    inner = outer;
+        while (h > 0) {
+            for (outer = h; outer < size; outer++) {
+                temp = array[outer];
+                inner = outer;
 
-                    while(inner > h - 1 && array[inner - h] >= temp) {
-                        array[inner] = array[inner - h];
-                        inner -= h;
-                    }
-                    array[inner] = temp;
+                while (inner > h - 1 && array[inner - h] >= temp) {
+                    array[inner] = array[inner - h];
+                    inner -= h;
                 }
-                h = (h - 1) / 3;
+                array[inner] = temp;
             }
+            h = (h - 1) / 3;
         }
+    }
 
     public static void main(String[] args) {
         int[] array = ArrayUtil.createAndFillArray(100);
@@ -45,7 +45,7 @@ public class ShellSort {
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
 
     }
 

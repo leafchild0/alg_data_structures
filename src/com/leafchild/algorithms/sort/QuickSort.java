@@ -10,8 +10,6 @@ import com.leafchild.algorithms.ArrayUtil;
  */
 public class QuickSort {
 
-    private static int[] data;
-
     public static void main(String[] args) {
         int[] array = ArrayUtil.createAndFillArray(100);
 
@@ -23,18 +21,14 @@ public class QuickSort {
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
     }
 
     public static void quickSort(int[] array) {
-        data = array;
-        int left = 0;
-        int right = data.length - 1;
-
-        internalSort(left, right);
+        internalSort(array, 0, array.length - 1);
     }
 
-    private static void internalSort(int left, int right) {
+    private static void internalSort(int[] data, int left, int right) {
         int pivot = data[left + (right - left) / 2];
         int i = left, j = right;
 
@@ -49,8 +43,8 @@ public class QuickSort {
             }
         }
 
-        if(left < j) internalSort(left, j);
-        if(i < right) internalSort(i, right);
+        if(left < j) internalSort(data, left, j);
+        if(i < right) internalSort(data, i, right);
 
     }
 

@@ -6,12 +6,12 @@ import com.leafchild.algorithms.ArrayUtil;
  * Implementation of Merge Sort algorithm
  * @author: vmalyshev
  * Created: 8/17/16
- *
+ * <p>
  * 1) Divide array in smaller arrays contains 1 elem:
- *  Calculate midpoint and and two arrays (left and right)
+ *  Calculate midpoint and two arrays (left and right)
  *  Populate left and right arrays
  *  Run sort again with left and right arrays again
- *
+ * <p>
  * 2) As soon as data gets divided, do a merge
  *  While there are element in the left or right sub arrays
  *  Check if left or right arrays has elems
@@ -31,7 +31,7 @@ public class MergeSort {
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
     }
 
     private static int[] mergeSort(int[] array) {
@@ -87,7 +87,7 @@ public class MergeSort {
                 resIndex += 1;
             }
             //for remain values in right sub array
-            else if (rIndex < right.length) {
+            else {
                 result[resIndex] = right[rIndex];
                 rIndex += 1;
                 resIndex += 1;

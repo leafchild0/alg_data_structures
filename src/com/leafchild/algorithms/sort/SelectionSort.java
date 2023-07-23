@@ -21,7 +21,7 @@ public class SelectionSort {
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
     }
 
     private static void selectionSort(int[] array) {

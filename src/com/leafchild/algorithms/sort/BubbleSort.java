@@ -11,21 +11,21 @@ import com.leafchild.algorithms.ArrayUtil;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] array = ArrayUtil.createAndFillArray(10);
+        int[] array = ArrayUtil.createAndFillArray(30);
 
         System.out.println("Unsorted Array:");
         ArrayUtil.printArray(array);
         long start = System.currentTimeMillis();
-        bubleSort(array);
+        bubbleSort(array);
         long end = System.currentTimeMillis();
         System.out.println("Sorted Array:");
         ArrayUtil.printArray(array);
 
-        System.out.println("Consumed " + (end - start) + " miliseconds");
+        System.out.println("Consumed " + (end - start) + " milliseconds");
 
     }
 
-    private static void bubleSort(int[] array) {
+    private static void bubbleSort(int[] array) {
 
         for (int i = array.length -1; i > 1; i--) {
             for (int j = 0; j < i; j++) {

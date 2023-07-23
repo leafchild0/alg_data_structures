@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] array = ArrayUtil.createAndFillArray(10);
+        int[] array = ArrayUtil.createAndFillArray(30);
         int value = 7;
 
         Arrays.sort(array);
