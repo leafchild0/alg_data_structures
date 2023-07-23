@@ -2,6 +2,9 @@ package com.leafchild.algorithms;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Service class for useful array methods
@@ -11,12 +14,10 @@ import java.util.Random;
 public class ArrayUtil {
 
     public static int[] createAndFillArray(int arraySize) {
-        int[] array = new int[arraySize];
-        Random r = new Random();
-        for (int i = 0; i < arraySize; i++) {
-            array[i] = r.nextInt(arraySize);
-        }
-        return array;
+        return new Random()
+            .ints(arraySize, 0, arraySize * 10)
+            .distinct()
+            .toArray();
     }
 
     public static void printArray(int[] array) {
